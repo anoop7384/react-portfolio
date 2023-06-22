@@ -1,5 +1,7 @@
 import { useWeather } from "../context/WeatherContext";
 import { useTheme } from "../context/ThemeContext";
+import { createContext, useContext, useState, useEffect } from "react";
+import "./Weather.css";
 
 function Weather() {
   const {
@@ -17,11 +19,14 @@ function Weather() {
   console.log(weathers)
 
   const { theme, setTheme } = useTheme();
+  const [selectedItem, setSelectedItem] = useState(selected);
+  const [suggestions, setSuggestions] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const handleChange = (e) => {
-    const newValue = e.target.value.split(",");
-    setSelected(newValue);
-  };
+  // const handleChange = (e) => {
+  //   const newValue = e.target.value.split(",");
+  //   setSelected(newValue);
+  // };
   const handleSwitch = () => {
     setUnit(unit == "metric" ? "imperial" : "metric");
   };
@@ -46,22 +51,67 @@ function Weather() {
       return day.toLocaleString("en-us", { weekday: "long" });
     }
   }
+
+  const handleToggle = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleSelect = (item) => {
+    setSelectedItem(item);
+    setSelected(item);
+    setIsOpen(false);
+  };
+
+  const handleChange = (event) => {
+    const value = event.target.value;
+    setSelectedItem(value);
+
+    // Filter the suggestions based on the selected item
+    const filteredSuggestions = getSuggestions(value);
+    setSuggestions(filteredSuggestions);
+  };
+
+  const getSuggestions = (selectedItem) => {
+    // Replace this with your own logic to get suggestions from a list or API
+    const list = cities;
+    const suggestion= list.filter(item =>
+      item.toLowerCase().includes(selectedItem.toLowerCase())
+    );
+    suggestion.sort((a, b) => {
+      const prefixA = a.toLowerCase().substring(0, selectedItem.length);
+      const prefixB = b.toLowerCase().substring(0, selectedItem.length);
+
+      // Compare suggestions based on the length of the prefix
+      if (prefixA === selectedItem.toLowerCase()) return -1;
+      if (prefixB === selectedItem.toLowerCase()) return 1;
+
+      // Compare suggestions based on the length of the prefix
+      return prefixB.length - prefixA.length;
+    });
+    return suggestion;
+  };
+
+
   return (
     <>
       <aside>
         <div className={`aside ${theme}`}>
           <div className="aside-container">
             <div className="aside-header">
-              <select onChange={handleChange}>
-                {cities.map((city) => (
-                  <option
-                    key={city.id}
-                    value={city.name}
-                  >
-                    {city.name}
-                  </option>
-                ))}
-              </select>
+              <div className="dropdown">
+                <input
+                  type="text"
+                  value={selectedItem}
+                  onChange={handleChange}
+                  onClick={handleToggle}
+                  placeholder="Select an item..."
+                />
+                <ul className={`dropdown-menu ${isOpen ? 'open' : ''}`}>
+                  {suggestions.map((item, index) => (
+                    <li key={index} onClick={() => handleSelect(item)}>{item}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
             <div className="aside-main">
               <h1>{selected}</h1>
@@ -104,7 +154,7 @@ function Weather() {
                   <span className="material-symbols-rounded">light_mode</span>
                 </div>
                 <span>
-                  {Math.round(weathers?.daily?.[0]?.main.temp_max)}
+                  {Math.round(weathers?.list?.[0]?.main.temp_max)}
                   {unit === "metric" ? (
                     <span>&#8451;</span>
                   ) : (
@@ -118,7 +168,7 @@ function Weather() {
                   <span className="material-symbols-rounded">bedtime</span>
                 </div>
                 <span>
-                  {Math.round(weathers?.daily?.[0]?.main.temp_min)}
+                  {Math.round(weathers?.list?.[0]?.main.temp_min)}
                   {unit === "metric" ? (
                     <span>&#8451;</span>
                   ) : (

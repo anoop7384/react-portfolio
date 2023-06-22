@@ -5,7 +5,7 @@ import CityComponent from "./CityComponent";
 import styled from "styled-components";
 
 
-const box = styled.div`
+const Box = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,9 +38,9 @@ function Container() {
         {selected && weathers ? (
           <Weather />
         ) : (
-            <box>
+            <Box>
               <CityComponent />
-            </box>
+            </Box>
         )}
 
       </div>

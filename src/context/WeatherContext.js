@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import cityData from "../data/cities_of_turkey.json";
+import cityData from "../data/cities_of_india.json";
 
 const WeatherContext = createContext();
 
@@ -37,17 +37,17 @@ export const WeatherProvider = ({ children }) => {
   //   ? selected?.initialvalues?.[0].longitude
   //   : selected.longitude;
 
-  // useEffect(() => {
-  //   fetch(
-  //     // `https://api.openweathermap.org/data/2.5/onecall?lat=${citylat}&lon=${citylon}&exclude=minutely,hourly&units=${unit}&appid=${apiKey}`
-  //     // `https://api.openweathermap.org/data/2.5/forecast?q=${selected}&exclude=minutely,hourly&units=${unit}&cnt=7&appid=${apiKey2}`
+  useEffect(() => {
+    fetch(
+      // `https://api.openweathermap.org/data/2.5/onecall?lat=${citylat}&lon=${citylon}&exclude=minutely,hourly&units=${unit}&appid=${apiKey}`
+      `https://api.openweathermap.org/data/2.5/forecast?q=${selected}&exclude=minutely,hourly&units=${unit}&cnt=7&appid=${apiKey2}`
 
-  //     `https://api.openweathermap.org/data/2.5/weather?q=${selected}&appid=${apiKey2}`
-  //   )
-  //     .then((response) => response.json())
-  //     .then((data) => setWeathers(data));
-  //   return;
-  // }, [selected, unit]);
+      // `https://api.openweathermap.org/data/2.5/weather?q=${selected}&appid=${apiKey2}`
+    )
+      .then((response) => response.json())
+      .then((data) => setWeathers(data));
+    return;
+  }, [selected, unit]);
 
   useEffect(() => {
     getCities();
