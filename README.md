@@ -1,70 +1,105 @@
-# Getting Started with Create React App
+# React Weather Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+- [Overview](#overview)
+- [Demo](#demo)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Screenshots](#screenshots)
+- [Feedback](#feedback)
 
-In the project directory, you can run:
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This is a React weather application that allows users to search for weather information for different locations. It provides real-time weather updates, including temperature, humidity, wind speed, and 7-day weather forecast.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Demo
 
-### `npm test`
+A link to a video demo of weather app.
+https://www.youtube.com/watch?v=0g-jPhgflOs
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[![Video Demo](https://i9.ytimg.com/vi_webp/0g-jPhgflOs/mq2.webp?sqp=CIzrsKUG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGEUgSShlMA8=&rs=AOn4CLC8RYCsMLgQNLJmI90QMcuAfLNQBQ)](https://www.youtube.com/watch?v=0g-jPhgflOs)
 
-### `npm run build`
+## Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Search for weather information by city  with a dynamic search bar providing suggestions as you type.
+- Display current weather conditions, including temperature, humidity, wind speed, and description.
+- Show a 7-day weather forecast with daily temperature highs and lows.
+- Option to switch between metric and imperial units of measurement.
+- Retrieve weather information based on the user's current location.
+- Responsive design for a seamless experience on different devices.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Follow these steps to set up the react app on your local machine:
 
-### `npm run eject`
+### Prerequisites
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- npm installed on your system.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 1. Clone the repository
+```bash
+git clone https://github.com/anoop7384/react-weather-application.git
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+### 2. Install dependencies
+```bash
+npm install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 4. Start the development server
+```bash
+npm start
+```
+The React Weather Application will be accessible locally at http://localhost:3000/.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Usage
 
-### Analyzing the Bundle Size
+Once the development server is running, you can open a web browser and navigate to http://localhost:3000/ to use the React Weather Application. Enter a city in the search bar to retrieve weather information. The application will provide suggestions as you type, making it easier to find the desired location. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Additionally, you can click on the location button to fetch weather information based on your current location.
 
-### Making a Progressive Web App
+## Screenshots
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Here are some screenshots of the Social Networking Website to give you a glimpse of its various pages and features.
 
-### Advanced Configuration
+## Login Page
+![Login Page](screenshots/login_page.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Registration Page
+![Registration Page](screenshots/registration_page.png)
 
-### Deployment
+## Home Page
+![Home Page](screenshots/home_page.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## User Profile Page
+![User Profile Page](screenshots/profile_page.png)
 
-### `npm run build` fails to minify
+## Post Creation Page
+![Home Page](screenshots/post_page.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Message Page
+![Message Page](screenshots/message_page.png)
+
+## Serch Bar Page
+![Explore Page](screenshots/search_page.png)
+
+## Notification Page
+![Group Page](screenshots/notification_page.png)
+
+
+
+These screenshots provide an overview of the website's design and user interface. The actual website may have additional features and pages not depicted here.
+
+
+## Feedback
+We appreciate your feedback and are dedicated to providing a positive user experience. If you have any suggestions, encounter issues, or need support, please reach out to our support team at anoop553407@gmail.com.
+
+
+

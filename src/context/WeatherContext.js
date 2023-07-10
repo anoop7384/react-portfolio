@@ -40,6 +40,7 @@ export const WeatherProvider = ({ children }) => {
   useEffect(() => {
     fetch(
       // `https://api.openweathermap.org/data/2.5/onecall?lat=${citylat}&lon=${citylon}&exclude=minutely,hourly&units=${unit}&appid=${apiKey}`
+
       `https://api.openweathermap.org/data/2.5/forecast?q=${selected}&exclude=minutely,hourly&units=${unit}&cnt=7&appid=${apiKey2}`
 
       // `https://api.openweathermap.org/data/2.5/weather?q=${selected}&appid=${apiKey2}`
