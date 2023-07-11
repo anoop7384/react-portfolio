@@ -69,33 +69,17 @@ Additionally, you can click on the location button to fetch weather information 
 
 Here are some screenshots of the Social Networking Website to give you a glimpse of its various pages and features.
 
-## Login Page
-![Login Page](screenshots/login_page.png)
+## Search Page
+![Search Page](screenshots/search_page.png)
 
-## Registration Page
-![Registration Page](screenshots/registration_page.png)
-
-## Home Page
-![Home Page](screenshots/home_page.png)
-
-## User Profile Page
-![User Profile Page](screenshots/profile_page.png)
-
-## Post Creation Page
-![Home Page](screenshots/post_page.png)
-
-## Message Page
-![Message Page](screenshots/message_page.png)
-
-## Serch Bar Page
-![Explore Page](screenshots/search_page.png)
-
-## Notification Page
-![Group Page](screenshots/notification_page.png)
+## Weather Page
+![Weather Page](screenshots/weather_page.png)
 
 
 
-These screenshots provide an overview of the website's design and user interface. The actual website may have additional features and pages not depicted here.
+
+
+These screenshots provide an overview of the website's design and user interface.
 
 
 ## Feedback
