@@ -27,8 +27,22 @@ function Weather() {
   //   const newValue = e.target.value.split(",");
   //   setSelected(newValue);
   // };
-  const handleSwitch = () => {
+  const handleSwitch = async (e) => {
+    
+    // e.preventDefault();
     setUnit(unit == "metric" ? "imperial" : "metric");
+
+    try {
+      const response = await fetch(
+        `https://api.openweathermap.org/data/2.5/forecast?q=${selectedItem}&exclude=minutely,hourly&units=${unit}&cnt=7&appid=fe4feefa8543e06d4f3c66d92c61b69c`
+      );
+      const data = await response.json();
+      // console.log(data);
+      setWeathers(data);
+    } catch (error) {
+      console.log('Error fetching weather:', error);
+    }
+    
   };
   const dt = weathers?.current?.dt;
 
@@ -135,9 +149,9 @@ function Weather() {
               <div className="aside-main-item">
                 <div>
                   Feels Like
-                  <span className="material-symbols-rounded">
+                  {/* <span className="material-symbols-rounded">
                     device_thermostat
-                  </span>
+                  </span> */}
                 </div>
                 <span>
                   {Math.round(weathers?.list[0]?.main.feels_like)}
@@ -151,7 +165,7 @@ function Weather() {
               <div className="aside-main-item">
                 <div>
                   Day
-                  <span className="material-symbols-rounded">light_mode</span>
+                  {/* <span className="material-symbols-rounded">light_mode</span> */}
                 </div>
                 <span>
                   {Math.round(weathers?.list?.[0]?.main.temp_max)}
@@ -165,7 +179,7 @@ function Weather() {
               <div className="aside-main-item">
                 <div>
                   Night
-                  <span className="material-symbols-rounded">bedtime</span>
+                  {/* <span className="material-symbols-rounded">bedtime</span> */}
                 </div>
                 <span>
                   {Math.round(weathers?.list?.[0]?.main.temp_min)}
@@ -186,7 +200,7 @@ function Weather() {
               <div className="aside-main-item">
                 <div>
                   Wind
-                  <span className="material-symbols-rounded">air</span>
+                  {/* <span className="material-symbols-rounded">air</span> */}
                 </div>
                 <span>{weathers?.list[0]?.main.wind_speed}</span>
               </div>

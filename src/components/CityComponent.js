@@ -94,13 +94,28 @@ const CityComponent = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const apiKey = "4327f11f6458df3e888e99c6b054069c";
   const apiKey2 = "fe4feefa8543e06d4f3c66d92c61b69c";
+  const apiKey3 = "bd5e378503939ddaee76f12ad7a97608";
   var newCity;
 
   // const handleChange = (e) => {
   //   newCity = e.target.value;
   // };
-  const fetchWeather = (e) => {
-    setSelected(selectedItem);
+  const fetchWeather = async (e) => {
+    e.preventDefault();
+    
+
+    try {
+      const response = await fetch(
+        `https://api.openweathermap.org/data/2.5/forecast?q=${selectedItem}&exclude=minutely,hourly&units=${unit}&cnt=7&appid=fe4feefa8543e06d4f3c66d92c61b69c`
+      );
+      const data = await response.json();
+      console.log(data);
+      setWeathers(data);
+      setSelected(selectedItem);
+      console.log(selected);
+    } catch (error) {
+      console.log('Error fetching weather:', error);
+    }
   };
 
   const handleLocationRequest = () => {
@@ -158,20 +173,30 @@ const CityComponent = (props) => {
   };
 
   useEffect(() => {
-    if (location) {
+    const fetchWeather = async () => {
+      if (location) {
+        const { latitude, longitude } = location;
+        const geocodeUrl = `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=9a77a0964d694bfbaa370e1fbb614247`;
 
-      const apiKey = 'YOUR_API_KEY';
-      const { latitude, longitude } = location;
-      const url = `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=9a77a0964d694bfbaa370e1fbb614247`;
+        try {
+          const geocodeResponse = await fetch(geocodeUrl);
+          const geocodeData = await geocodeResponse.json();
+          console.log(geocodeData);
+          const { county } = geocodeData.results[0].components;
+          setSelected(county);
+          console.log(county);
 
-      fetch(url)
-        .then(response => response.json())
-        .then(data => {
-          const { city } = data.results[0].components;
-          setSelected(city);
-        })
-        .catch(error => console.log(error));
-    }
+          const weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${county}&exclude=minutely,hourly&units=${unit}&cnt=7&appid=fe4feefa8543e06d4f3c66d92c61b69c`;
+          const weatherResponse = await fetch(weatherUrl);
+          const weatherData = await weatherResponse.json();
+          setWeathers(weatherData);
+        } catch (error) {
+          console.log('Error fetching weather:', error);
+        }
+      }
+    };
+
+    fetchWeather();
   }, [location]);
 
 

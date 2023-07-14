@@ -6,7 +6,7 @@ const WeatherContext = createContext();
 export const WeatherProvider = ({ children }) => {
   const [cities, setCities] = useState([]);
   const [selected, setSelected] = useState();
-  const [weathers, setWeathers] = useState({});
+  const [weathers, setWeathers] = useState();
   const [unit, setUnit] = useState("metric");
 
   const values = {
@@ -22,6 +22,7 @@ export const WeatherProvider = ({ children }) => {
 
   const apiKey = "4327f11f6458df3e888e99c6b054069c";
   const apiKey2 = "fe4feefa8543e06d4f3c66d92c61b69c";
+    const apiKey3 = "bd5e378503939ddaee76f12ad7a97608";
 
   //console.log(weathers?.current?.weather?.[0].icon);
 
@@ -38,17 +39,25 @@ export const WeatherProvider = ({ children }) => {
   //   : selected.longitude;
 
   useEffect(() => {
-    fetch(
-      // `https://api.openweathermap.org/data/2.5/onecall?lat=${citylat}&lon=${citylon}&exclude=minutely,hourly&units=${unit}&appid=${apiKey}`
 
-      `https://api.openweathermap.org/data/2.5/forecast?q=${selected}&exclude=minutely,hourly&units=${unit}&cnt=7&appid=${apiKey2}`
+    const fetchWeather = async () => {
+      try {
+        const response = await fetch(
+          `https://api.openweathermap.org/data/2.5/forecast?q=${selected}&exclude=minutely,hourly&units=${unit}&cnt=7&appid=fe4feefa8543e06d4f3c66d92c61b69c`
+        );
+        const data = await response.json();
+        console.log(data);
+        setWeathers(data);
+        
+      } catch (error) {
+        console.log('Error fetching weather:', error);
+      }
+    };
+    console.log(selected);
+    fetchWeather();
 
-      // `https://api.openweathermap.org/data/2.5/weather?q=${selected}&appid=${apiKey2}`
-    )
-      .then((response) => response.json())
-      .then((data) => setWeathers(data));
     return;
-  }, [selected, unit]);
+  }, [selected,unit]);
 
   useEffect(() => {
     getCities();
