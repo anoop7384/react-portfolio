@@ -18,7 +18,7 @@ This is a React weather application that allows users to search for weather info
 ## Demo
 
 A link to a live demo of weather app.
-https://www.youtube.com/watch?v=0g-jPhgflOs
+[https://www.youtube.com/watch?v=0g-jPhgflOs](https://anoop7384.github.io/react-weather-application/)
 
 
 
