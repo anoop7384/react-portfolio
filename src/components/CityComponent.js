@@ -23,7 +23,7 @@ const SearchBox = styled.form`
     font-weight: bold;
   }
   & button {
-    background-color: black;
+    background-color: #29242f;
     font-size: 14px;
     padding: 0 10px;
     color: white;
@@ -64,7 +64,7 @@ const SearchBox = styled.form`
 `;
 
 const ChooseCityLabel = styled.span`
-  color: black;
+  color: white;
   margin: 10px auto;
   font-size: 18px;
   font-weight: bold;
@@ -102,7 +102,7 @@ const CityComponent = (props) => {
   // };
   const fetchWeather = async (e) => {
     e.preventDefault();
-    
+    // setSelected(selectedItem);
 
     try {
       const response = await fetch(
@@ -183,13 +183,14 @@ const CityComponent = (props) => {
           const geocodeData = await geocodeResponse.json();
           console.log(geocodeData);
           const { county } = geocodeData.results[0].components;
-          setSelected(county);
+          
           console.log(county);
 
           const weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${county}&exclude=minutely,hourly&units=${unit}&cnt=7&appid=fe4feefa8543e06d4f3c66d92c61b69c`;
           const weatherResponse = await fetch(weatherUrl);
           const weatherData = await weatherResponse.json();
           setWeathers(weatherData);
+          setSelected(county);
         } catch (error) {
           console.log('Error fetching weather:', error);
         }
@@ -202,6 +203,7 @@ const CityComponent = (props) => {
 
   return (
     <>
+      
       <WelcomeWeatherLogo src={"/icons/perfect-day.svg"} /><br></br>
       <ChooseCityLabel>Find Weather of your city</ChooseCityLabel>
       <SearchBox onSubmit={fetchWeather}>

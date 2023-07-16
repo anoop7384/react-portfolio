@@ -10,11 +10,10 @@ const Box = styled.div`
   flex-direction: column;
   align-items: center;
   width: 420px;
-  padding: 20px 10px;
   margin: auto;
   border-radius: 4px;
-  box-shadow: 0 3px 6px 0 #555;
-  background: white;
+  // box-shadow: 0 3px 6px 0 #555;
+  background: #29242f;
   font-family: Montserrat;
   justify-content: center;
 `;

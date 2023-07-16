@@ -4,10 +4,10 @@
 
 - [Overview](#overview)
 - [Demo](#demo)
+- [Screenshots](#screenshots)
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Screenshots](#screenshots)
 - [Feedback](#feedback)
 
 
@@ -21,6 +21,16 @@ A link to a video demo of weather app.
 https://www.youtube.com/watch?v=0g-jPhgflOs
 
 [![Video Demo](https://i9.ytimg.com/vi_webp/0g-jPhgflOs/mq2.webp?sqp=CIzrsKUG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGEUgSShlMA8=&rs=AOn4CLC8RYCsMLgQNLJmI90QMcuAfLNQBQ)](https://www.youtube.com/watch?v=0g-jPhgflOs) -->
+
+## Screenshots
+
+Here are some screenshots of the Social Networking Website to give you a glimpse of its various pages and features.
+
+## Search Page
+![Search Page](screenshots/search_page.png)
+
+## Weather Page
+![Weather Page](screenshots/weather_page.png)
 
 ## Features
 
@@ -65,15 +75,7 @@ Once the development server is running, you can open a web browser and navigate 
 
 Additionally, you can click on the location button to fetch weather information based on your current location.
 
-<!-- ## Screenshots
 
-Here are some screenshots of the Social Networking Website to give you a glimpse of its various pages and features.
-
-## Search Page
-![Search Page](screenshots/search_page.png)
-
-## Weather Page
-![Weather Page](screenshots/weather_page.png) -->
 
 
 
