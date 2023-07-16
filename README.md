@@ -24,13 +24,15 @@ https://www.youtube.com/watch?v=0g-jPhgflOs
 
 ## Screenshots
 
-Here are some screenshots of the Social Networking Website to give you a glimpse of its various pages and features.
+Here are some screenshots of the Weather Website to give you a glimpse of its various pages and features.
 
 ## Search Page
 ![Search Page](screenshots/search_page.png)
 
 ## Weather Page
 ![Weather Page](screenshots/weather_page.png)
+
+These screenshots provide an overview of the website's design and user interface.
 
 ## Features
 
@@ -81,7 +83,7 @@ Additionally, you can click on the location button to fetch weather information 
 
 
 
-These screenshots provide an overview of the website's design and user interface.
+
 
 
 ## Feedback
