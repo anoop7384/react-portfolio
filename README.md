@@ -15,12 +15,12 @@
 
 This is a React weather application that allows users to search for weather information for different locations. It provides real-time weather updates, including temperature, humidity, wind speed, and 7-day weather forecast.
 
-<!-- ## Demo
+## Demo
 
-A link to a video demo of weather app.
+A link to a live demo of weather app.
 https://www.youtube.com/watch?v=0g-jPhgflOs
 
-[![Video Demo](https://i9.ytimg.com/vi_webp/0g-jPhgflOs/mq2.webp?sqp=CIzrsKUG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGEUgSShlMA8=&rs=AOn4CLC8RYCsMLgQNLJmI90QMcuAfLNQBQ)](https://www.youtube.com/watch?v=0g-jPhgflOs) -->
+
 
 ## Screenshots
 
