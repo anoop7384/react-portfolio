@@ -20,6 +20,10 @@ This is a React weather application that allows users to search for weather info
 A link to a live demo of weather app.
 (https://anoop7384.github.io/react-weather-application/)
 
+
+https://github.com/user-attachments/assets/52cdeebb-1af8-4bc7-859e-cd758bbe8d36
+
+
 Video Demo -> (https://youtu.be/_opcQXBW5TA)
 
 
